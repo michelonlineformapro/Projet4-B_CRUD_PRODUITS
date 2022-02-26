@@ -1,0 +1,71 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cabin', sans-serif;
+}
+ a{
+     color: #403516!important;
+ }
+ a:hover{
+     color: #A3A658!important;
+ }
+
+/*Login form*/
+#form-login{
+    padding: 20px;
+    background-color: #D9B89C;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.2);
+}
+
+#form-login input{
+    border: none;
+    outline: none;
+    border-bottom: solid 2px #403516;
+    background-color: transparent;
+}
+#form-login input:focus{
+    border: none;
+    outline: none;
+}
+
+/*Les produits*/
+.img-produit{
+    text-align: center;
+    width: 200px;
+    height: auto;
+}
+.card{
+    height: 100%!important;
+    padding: 20px!important;
+    transition: 0.2s;
+}
+.card:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.2);
+}
+.img-details{
+    width: 200px;
+}
+/*Update*/
+#form-update{
+    padding: 20px;
+    background-color: #0f4a63;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.2);
+    color: orangered;
+}
+.img-logo{
+    background-color: white;
+    padding: 20px;
+}
