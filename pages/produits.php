@@ -36,7 +36,7 @@ if(isset($_SESSION["email"])){
 
 
             <?php
-            //Connexion a la base de donnée ecommer via PDO
+            //Connexion a la base de donnée ecommerce via PDO
             //Les variable de phpmyadmin
             $user = "root";
             $pass = "";
@@ -46,7 +46,7 @@ if(isset($_SESSION["email"])){
                  * PHP Data Objects est une extension définissant l'interface pour accéder à une base de données avec PHP. Elle est orientée objet, la classe s’appelant PDO.
                  */
                 //Instance de la classe PDO (Php Data Object)
-                $dbh = new PDO('mysql:host=localhost;dbname=ecommerce', $user, $pass);
+                $dbh = new PDO('mysql:host=localhost;dbname=ecommerce;charset=UTF8', $user, $pass);
                 //Debug de pdo
                 /*
                  * L'opérateur de résolution de portée (aussi appelé Paamayim Nekudotayim) ou, en termes plus simples,

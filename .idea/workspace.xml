@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0de2b5e8-fa85-4baa-b074-54ec8215570a" name="Default Changelist" comment="" />
+    <list default="true" id="0de2b5e8-fa85-4baa-b074-54ec8215570a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/produit_details.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/produit_details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/produits.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/produits.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +21,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="25dK4emGvUTRsIAlkykyampU92c" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -24,7 +31,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -37,16 +46,17 @@
       <option name="presentableId" value="Default" />
       <updated>1645851333326</updated>
       <workItem from="1645851334372" duration="20512000" />
+      <workItem from="1646142969559" duration="601000" />
+      <workItem from="1646314023126" duration="3710000" />
+      <workItem from="1646392465512" duration="2601000" />
+      <workItem from="1646402896519" duration="15000" />
+      <workItem from="1646407739631" duration="2179000" />
+      <workItem from="1646641253043" duration="17000" />
+      <workItem from="1646649236702" duration="30000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="794" y="439" key="NewPhpFileDialog" timestamp="1645873341861">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1645873341861" />
   </component>
 </project>

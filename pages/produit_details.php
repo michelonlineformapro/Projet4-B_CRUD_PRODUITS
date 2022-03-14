@@ -69,6 +69,8 @@ if(isset($_SESSION["email"])){
             //Requète préparée
             $request = $dbh->prepare($sql);
             //Lié les paramètres
+            //Le 1 est egale a WHERE id_produit = ?
+            //Lié a l'id recuperer dans URL avec $_GET['id_produit']
             $request->bindParam(1, $id_produit);
 
             //Execution de la requète
