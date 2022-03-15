@@ -30,7 +30,11 @@ if(isset($_SESSION["email"])){
             <span class="mt-3 d-flex justify-content-around">
                 <h3 class="mt-3 text-warning">BIENVENUE <?= $_SESSION['email'] ?></h3>
                 <form method="post">
-                    <button id="btn-deconnexion" name="btn-deconnexion" class="btn btn-danger">DECONNEXION</button>
+                    <div class="d-flex justify-content-center">
+                        <button id="btn-deconnexion" name="btn-deconnexion" class="btn btn-danger">DECONNEXION</button>
+                        <a href="inscription.php" class="mx-3 btn btn-info">Ajouter un administrateur</a>
+                    </div>
+
                 </form>
             </span>
 

@@ -12,7 +12,7 @@
                     <a class="nav-link active" aria-current="page" href="#">PRODUITS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">AUTRES</a>
+                    <a class="nav-link" href="">ADMINSITRATEURS</a>
                 </li>
             </ul>
             <form class="d-flex">
