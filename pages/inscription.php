@@ -61,36 +61,45 @@ try {
 </div>
 
 <?php
+
+//Debug des champs du formulaire form = method post + attrubut name=""
+/*
 var_dump($_POST['email']);
 var_dump($_POST['password']);
 var_dump($_POST['password_repeat']);
+*/
 
 
 //Desinfecter les champs
-//lutter contre faille XSS
+//lutter contre faille XSS = sanitize datas
+//trim = retire les espaces en debut et fin de chaine de caractères
+//htmlspecialchar = transforme les caractère speciaux (ex: <script>) en chaine de caractère
 $emailAdmin = trim(htmlspecialchars($_POST['email']));
 $passwordAdmin = trim(htmlspecialchars($_POST['password']));
 $password_repeat_admin = trim(htmlspecialchars($_POST['password_repeat']));
 
+//Si les champ du formulaire existe et ne sont pas vide
 if(isset($emailAdmin) && !empty($emailAdmin) && isset($passwordAdmin) && !empty($passwordAdmin)){
-    //Verification du password repeat
+    //Verification du password repeat === a password
     if($passwordAdmin === $password_repeat_admin){
-        //Ecire la requète sql
+        //Ecire la requète sql = insere les valeur du formulaire dans la table utilisateurs
         $sql = "INSERT INTO `utilisateurs`(`email`, `password`) VALUES (?,?)";
-        //lutter contre injection SQL
+        //lutter contre injection SQL = var = connexion->methode prepare de la classe PDO
         $insertUser = $db->prepare($sql);
         //Lié les elements du formulaire a ma requète SQL ?,? = champ du formulaire rempli par utilisateur
 
         $insertUser->bindParam(1, $emailAdmin);
         $insertUser->bindParam(2, $passwordAdmin);
 
-        //Executer la requète
+        //Executer la requète et retouner un tableau associatif
         $insertUser->execute(array(
             $emailAdmin,
             $passwordAdmin
         ));
 
+        //Si la requète marche
         if($insertUser){
+            //On affiche un message de succès + un bouton pour se connecter et on cache le formulaire
             ?>
             <div class="container">
                 <?php
@@ -112,10 +121,12 @@ if(isset($emailAdmin) && !empty($emailAdmin) && isset($passwordAdmin) && !empty(
             </style>
             <?php
         }else{
+            //Sinon on affiche une erreur
             echo "<div class='container'>
                 <p class='alert alert-danger'>Merci de remplir tous les champs !</p></div>";
         }
 
+        //Erreur si le 2 mot de passe ne sont pas identique
     }else{
         echo "<div class='container'>
             <p class='alert alert-danger'>Les 2 mots de passe ne sont pas identiques</p></div>";
