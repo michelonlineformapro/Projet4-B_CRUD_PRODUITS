@@ -98,7 +98,7 @@ if(isset($emailAdmin) && !empty($emailAdmin) && isset($passwordAdmin) && !empty(
         ));
 
         //Si la requète marche
-        if($insertUser){
+        if($insertUser == true){
             //On affiche un message de succès + un bouton pour se connecter et on cache le formulaire
             ?>
             <div class="container">
