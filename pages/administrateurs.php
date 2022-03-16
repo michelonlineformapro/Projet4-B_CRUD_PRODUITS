@@ -32,7 +32,7 @@ if(isset($_SESSION['email'])){
 try {
     $db = new PDO("mysql:host=localhost;dbname=ecommerce;charset=UTF8", "root", "");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Vous etes connectez a PDO MySQL";
+    //echo "Vous etes connectez a PDO MySQL";
 }catch (PDOException $exception){
     echo "erreur " .$exception->getMessage();
 }
@@ -69,7 +69,7 @@ $utilisateurs = $db->query($sql);
                         <a href="" class="btn btn-success">EDITER</a>
                     </td>
                     <td>
-                        <a href="suppimer_utilisateur.php?id_utilisateur=<?= $utilisateur['id_users'] ?>" class="btn btn-success">SUPPRIMER</a>
+                        <a href="suppimer_utilisateur.php?id_utilisateur=<?= $utilisateur['id_users'] ?>" class="btn btn-danger">SUPPRIMER</a>
                     </td>
                 </tr>
         <?php

@@ -94,8 +94,7 @@ if(isset($_SESSION["email"])){
                                         <h4 class="card-title text-info"><?= $produit['nom_produit'] ?></h4>
                                         <img src="<?= $produit['image_produit'] ?>" class="card-img-top img-fluid" alt="<?= $produit['nom_produit'] ?>" title="<?= $produit['nom_produit'] ?>">
                                     </div>
-
-
+                                    
                                     <div class="card-body">
 
                                         <p class="card-text"><?= $produit['description_produit'] ?></p>

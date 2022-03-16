@@ -26,7 +26,7 @@
 try {
     $db = new PDO("mysql:host=localhost;dbname=ecommerce;charset=UTF8", "root", "");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Vous etes connectez a PDO MySQL";
+    //echo "Vous etes connectez a PDO MySQL";
 }catch (PDOException $exception){
     echo "erreur " .$exception->getMessage();
 }
@@ -70,16 +70,17 @@ var_dump($_POST['password_repeat']);
 */
 
 
-//Desinfecter les champs
+
+
+//Si les champ du formulaire existe et ne sont pas vide
+if(isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password'])){
+    //Desinfecter les champs
 //lutter contre faille XSS = sanitize datas
 //trim = retire les espaces en debut et fin de chaine de caractères
 //htmlspecialchar = transforme les caractère speciaux (ex: <script>) en chaine de caractère
-$emailAdmin = trim(htmlspecialchars($_POST['email']));
-$passwordAdmin = trim(htmlspecialchars($_POST['password']));
-$password_repeat_admin = trim(htmlspecialchars($_POST['password_repeat']));
-
-//Si les champ du formulaire existe et ne sont pas vide
-if(isset($emailAdmin) && !empty($emailAdmin) && isset($passwordAdmin) && !empty($passwordAdmin)){
+    $emailAdmin = trim(htmlspecialchars($_POST['email']));
+    $passwordAdmin = trim(htmlspecialchars($_POST['password']));
+    $password_repeat_admin = trim(htmlspecialchars($_POST['password_repeat']));
     //Verification du password repeat === a password
     if($passwordAdmin === $password_repeat_admin){
         //Ecire la requète sql = insere les valeur du formulaire dans la table utilisateurs
