@@ -105,7 +105,7 @@
                     if($emailUtilisateur === $email && $passwordUtilisateur === $password){
                         //On stock la connexion dans une variable de session et on redirige ves la page d'accueil
                         $_SESSION['email'] = $emailUtilisateur;
-                        header("Location: pages/produits.php");
+                        header("Location: pages/produits.php?page=1");
                     }else{
                         //Erreur de mail et mot de passe
                         echo "<div class='mt-3 container'>

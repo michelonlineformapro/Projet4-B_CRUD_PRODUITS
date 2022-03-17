@@ -65,12 +65,56 @@ if(isset($_SESSION["email"])){
             }
 
             if($dbh){
+                if(isset($_GET['page'])){
+                    $page = $_GET['page'];
+                }else{
+                    $page = "page=1";
+                }
+
+                $limite = 3;
+                $debut = ($page - 1) * $limite;
+
                 //Requète SQL de selection des produits
-                $sql = "SELECT * FROM produits";
+                $sql = "SELECT * FROM produits LIMIT $limite OFFSET $debut";
                 //Grace a PDO on accède à la methode query()
                 //PDO::query() prépare et exécute une requête SQL en un seul appel de fonction, retournant la requête en tant qu'objet PDOStatement. (etat des sonnées)
                 //PDOStatement = Représente une requête préparée et, une fois exécutée, le jeu de résultats associé.
                 $statement = $dbh->query($sql);
+
+                //compté les entrée
+                $resultRow = $dbh->query("SELECT COUNT(id_produit) FROM produits");
+                $total = $resultRow->fetchColumn();
+                $nombrePage = ceil($total / $limite);
+
+                ?>
+                <div class="text-center">
+                    <img width="10%" src="public/img/logo.png" alt="Annonces.com" title="Annonce.com">
+                </div>
+                <div class="d-flex flex-row justify-content-center mt-5">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <?php
+                            if ($page > 1):
+                                ?><li class="page-item"><a class="btn btn-warning" href="?page=<?php echo $page - 1; ?>">Page précédente</a></li><?php
+                            endif;
+
+                            /* On va effectuer une boucle autant de fois que l'on a de pages */
+                            for ($i = 1; $i <= $nombrePage; $i++):
+                                ?><li class="page-item"><a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a></li><?php
+                            endfor;
+
+                            /* Avec le nombre total de pages, on peut aussi masquer le lien
+                             * vers la page suivante quand on est sur la dernière */
+                            if ($page < $nombrePage):
+                                ?><li class="page-item"><a class="btn btn-info" href="?page=<?php echo $page + 1; ?>">Page suivante</a></li><?php
+                            endif;
+                            ?>
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <?php
             }
 
             ?>
