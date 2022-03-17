@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0de2b5e8-fa85-4baa-b074-54ec8215570a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/produits.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/produits.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +61,7 @@
       <workItem from="1647347276333" duration="3641000" />
       <workItem from="1647357184373" duration="2757000" />
       <workItem from="1647417124870" duration="1961000" />
-      <workItem from="1647496125434" duration="307000" />
+      <workItem from="1647496125434" duration="971000" />
     </task>
     <servers />
   </component>
@@ -83,5 +82,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="616" y="238" key="run.anything.popup" timestamp="1647496656521">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="616" y="238" key="run.anything.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1647496656521" />
   </component>
 </project>
