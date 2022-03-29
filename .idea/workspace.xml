@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0de2b5e8-fa85-4baa-b074-54ec8215570a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/produit_details.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/produit_details.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/produits.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/produits.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +41,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
   </component>
   <component name="ProjectId" id="25dK4emGvUTRsIAlkykyampU92c" />
   <component name="ProjectLevelVcsManager">
@@ -61,7 +83,9 @@
       <workItem from="1647347276333" duration="3641000" />
       <workItem from="1647357184373" duration="2757000" />
       <workItem from="1647417124870" duration="1961000" />
-      <workItem from="1647496125434" duration="971000" />
+      <workItem from="1647496125434" duration="1277000" />
+      <workItem from="1647632130154" duration="43000" />
+      <workItem from="1648576532996" duration="498000" />
     </task>
     <servers />
   </component>
@@ -82,8 +106,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Ajout de la jointure des categories" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la jointure des categories" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="740" y="258" key="FileChooserDialogImpl" timestamp="1647632172941">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="740" y="258" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1647632172941" />
     <state x="616" y="238" key="run.anything.popup" timestamp="1647496656521">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

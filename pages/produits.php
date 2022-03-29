@@ -79,7 +79,7 @@ if(isset($_SESSION["email"])){
             $debut = ($page - 1) * $limite;
 
             //Requète SQL de selection des produits avec une limte et un point de depart = OFFSET
-            $sql = "SELECT * FROM produits LIMIT $limite OFFSET $debut";
+            $sql = "SELECT * FROM produits INNER JOIN categories ON produits.categories_id = categories.id_categorie LIMIT $limite OFFSET $debut";
             //Grace a PDO on accède à la methode query()
             //PDO::query() prépare et exécute une requête SQL en un seul appel de fonction, retournant la requête en tant qu'objet PDOStatement. (etat des sonnées)
             //PDOStatement = Représente une requête préparée et, une fois exécutée, le jeu de résultats associé.
@@ -162,6 +162,7 @@ if(isset($_SESSION["email"])){
                                 </p>
 
                                 <em class="card-text">Date de depot : <?= $date_depot->format('d-m-Y') ?></em>
+                                <p class="mt-3 text-danger">Catégorie : <?= $produit['type_categorie'] ?></p>
                                 <br />
                                 <div class="container-fluid d-flex justify-content-center">
 

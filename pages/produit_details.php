@@ -62,7 +62,7 @@ if(isset($_SESSION["email"])){
 
         if($dbh){
             //Requète SQL de selection des produits
-            $sql = "SELECT * FROM produits WHERE id_produit = ?";
+            $sql = "SELECT * FROM produits INNER JOIN categories ON produits.categories_id = categories.id_categorie WHERE id_produit = ?";
 
             $id_produit = $_GET['id_produit'];
             //Grace a PDO on accède à la methode query()
@@ -112,7 +112,9 @@ if(isset($_SESSION["email"])){
                                 </p>
 
                                 <em class="card-text">Date de depot : <?= $date_depot->format('d-m-Y') ?></em>
+                                <p class="mt-3 text-danger">Catégorie : <?= $details['type_categorie'] ?></p>
                                 <br />
+
                                 <div class="container-fluid d-flex justify-content-center">
 
                                     <a href="produits.php" class="mt-2 btn btn-success">RETOUR</a>
