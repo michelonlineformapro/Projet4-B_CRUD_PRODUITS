@@ -83,7 +83,7 @@ try {
 
 if($dbh){
     //Requète SQL de selection des produits
-    $sql = "INSERT INTO `produits`(`id_produit`, `nom_produit`, `description_produit`, `prix_produit`, `stock_produit`, `date_depot`, `image_produit`) VALUES (?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO `produits`(`id_produit`, `nom_produit`, `description_produit`, `prix_produit`, `stock_produit`, `date_depot`, `image_produit`,`categories_id`) VALUES (?,?,?,?,?,?,?,?)";
     //Requète préparée = connexion + methode prepare + requete sql
     //Les requètes préparée lutte contre les injections SQL
     //PDO::prepare — Prépare une requête à l'exécution et retourne un objet
@@ -98,6 +98,7 @@ if($dbh){
     $insert->bindParam(5, $_POST['stock_produit']);
     $insert->bindParam(6, $_POST['date_depot']);
     $insert->bindParam(7, $_POST['image_produit']);
+    $insert->bindParam(8,$_POST['categories']);
 
     //executer la requète préparée
     //PDOStatement::execute — Exécute une requête préparée
@@ -109,12 +110,13 @@ if($dbh){
         $_POST['prix_produit'],
         $_POST['stock_produit'],
         $_POST['date_depot'],
-        $_POST['image_produit']
+        $_POST['image_produit'],
+        $_POST['categories']
     ));
 
     if($insert){
         echo "<p class='container alert alert-success'>Votre produit a été ajouté avec succès !</p>";
-        echo "<a href='produits.php' class='container btn btn-success'>Voir mon produit</a>";
+        echo "<div class='text-center'><a href='produits.php?page=1' class='container btn btn-success'>Voir mon produit</a></div>";
     }else{
         echo "<p class='alert alert-danger'>Erreur lors de l'ajout de produit</p>";
     }

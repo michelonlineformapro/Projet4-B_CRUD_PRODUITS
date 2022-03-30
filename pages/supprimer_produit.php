@@ -72,7 +72,7 @@ if($dbh){
 }
 
 ?>
-    <form method="post">
+    <form method="post" id="details">
         <p class="text-center text-danger">SUPPRIMER LE PRODUIT</p>
         <p class="text-center text-danger"><?= $details['nom_produit'] ?></p>
         <p class="text-center text-danger"><?= $details['description_produit'] ?></p>
@@ -82,7 +82,7 @@ if($dbh){
         <div class="d-flex justify-content-center">
 
             <button type="submit" name="btn-supprimer" class="btn btn-danger">Confimer</button>
-            <a href="produits.php" class="btn btn-success">Annuler</a>
+            <a href="produits.php?page=1" class="btn btn-success">Annuler</a>
         </div>
 
     </form>
@@ -100,7 +100,14 @@ if(isset($_POST['btn-supprimer'])){
     $delete->execute();
     if($delete){
         echo "<p class='container alert alert-success'>Votre produit a bien été supprimer !</p>";
-        echo "<div class='container'><a href='produits.php' class='mt-3 btn btn-success'>RETOUR</a></div>";
+        echo "<div class='container'><a href='produits.php?page=1' class='mt-3 btn btn-success'>RETOUR</a></div>";
+        ?>
+            <style>
+                #details{
+                    display: none;
+                }
+            </style>
+        <?php
     }else{
         echo "<p class='alert alert-danger'>Erreur lors de la supression du produit !</p>";
     }

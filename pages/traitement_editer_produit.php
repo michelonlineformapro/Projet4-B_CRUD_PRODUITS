@@ -83,7 +83,7 @@ try {
 
 if($dbh){
     //Requète SQL de selection des produits
-    $sql = "UPDATE `produits` SET `nom_produit`= ?,`description_produit`= ?,`prix_produit`= ?,`stock_produit`= ?,`date_depot`= ?,`image_produit`= ? WHERE id_produit = ?";
+    $sql = "UPDATE `produits` SET `nom_produit`= ?,`description_produit`= ?,`prix_produit`= ?,`stock_produit`= ?,`date_depot`= ?,`image_produit`= ?, `categories_id`= ? WHERE id_produit = ?";
     //Requète préparée = connexion + methode prepare + requete sql
     //Les requètes préparée lutte contre les injections SQL
     //PDO::prepare — Prépare une requête à l'exécution et retourne un objet
@@ -98,12 +98,13 @@ if($dbh){
         $_POST['stock_produit'],
         $_POST['date_depot'],
         $_POST['image_produit'],
+        $_POST['categories'],
         $_GET['id_produit']
     ));
 
     if($update){
         echo "<p class='container alert alert-success'>Votre produit a été mis a jour avec succès !</p>";
-        echo "<div class='text-center'><a href='produits.php' class='container btn btn-success'>Voir mon produit</a></div> ";
+        echo "<div class='text-center'><a href='produits.php?page=1' class='container btn btn-success'>Voir mon produit</a></div> ";
     }else{
         echo "<p class='alert alert-danger'>Erreur lors de l'ajout de produit</p>";
     }

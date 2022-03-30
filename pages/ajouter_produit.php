@@ -34,6 +34,31 @@ if(isset($_SESSION["email"])){
                 </form>
             </span>
 
+        <?php
+        //Connexion a la base de donnée ecommer via PDO
+        //Les variable de phpmyadmin
+        $user = "root";
+        $pass = "";
+        //test d'erreur
+        try {
+            /*
+             * PHP Data Objects est une extension définissant l'interface pour accéder à une base de données avec PHP. Elle est orientée objet, la classe s’appelant PDO.
+             */
+            //Instance de la classe PDO (Php Data Object)
+            $dbh = new PDO('mysql:host=localhost;dbname=ecommerce', $user, $pass);
+            //Debug de pdo
+            /*
+             * L'opérateur de résolution de portée (aussi appelé Paamayim Nekudotayim) ou, en termes plus simples,
+             * le symbole "double deux-points" (::), fournit un moyen d'accéder aux membres static ou constant, ainsi qu'aux propriétés ou méthodes surchargées d'une classe.
+             */
+            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "<p class='container alert alert-success text-center'>Vous êtes connectez a PDO MySQL</p>";
+
+        } catch (PDOException $e) {
+            print "Erreur !: " . $e->getMessage() . "<br/>";
+            die();
+        }
+        ?>
 
 
 
@@ -76,9 +101,26 @@ if(isset($_SESSION["email"])){
                     <input type="file" class="form-control" id="image_produit" name="image_produit" required>
                 </div>
 
+                <div class="mb-3">
+                    Catégories :
+                    <select name="categories" class="form-control">
+
+                        <?php
+                        $sql = "SELECT * FROM categories";
+                        $categories = $dbh->query($sql);
+
+                        foreach ($categories as $categorie) {
+                            ?>
+                            <option class="text-success" value="<?= $categorie['id_categorie'] ?>"><?= $categorie['type_categorie'] ?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                </div>
+
                 <div class="d-flex justify-content-around">
                     <button type="submit" name="btn-connexion" class="btn btn-warning">Ajouter</button>
-                    <a href="produits.php" class="btn btn-success">Annuler</a>
+                    <a href="produits.php?page=1" class="btn btn-success">Annuler</a>
                 </div>
 
             </form>

@@ -29,7 +29,7 @@ if(isset($_SESSION["email"])){
 
     if($dbh){
         //Requète SQL de selection des produits
-        $sql = "SELECT * FROM produits WHERE id_produit = ?";
+        $sql = "SELECT * FROM produits INNER JOIN categories ON produits.categories_id = categories.id_categorie WHERE id_produit = ?";
 
         $id_produit = $_GET['id_produit'];
         //Grace a PDO on accède à la methode query()
@@ -91,17 +91,17 @@ if(isset($_SESSION["email"])){
                 </div>
                 <div class="mb-3">
                     <label for="nom_produit" class="form-label">Nom du produit</label>
-                    <input type="text" class="form-control" id="nom_produit" name="nom_produit" placeholder="<?= $details['nom_produit'] ?>" required>
+                    <input type="text" class="form-control" id="nom_produit" name="nom_produit" value="<?= $details['nom_produit'] ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="description_produit" class="form-label">Description</label>
-                    <textarea class="form-control" rows="5" id="description_produit" name="description_produit" placeholder="<?= $details['description_produit'] ?>" required></textarea>
+                    <textarea class="form-control" rows="5" id="description_produit" name="description_produit" value="<?= $details['description_produit'] ?>" required></textarea>
                 </div>
 
                 <div class="mb-3">
                     <label for="prix_produit" class="form-label">Prix du produit</label>
-                    <input type="number" step="0.01" class="form-control" id="prix_produit" name="prix_produit" placeholder="<?= $details['prix_produit'] ?>" required>
+                    <input type="number" step="0.01" class="form-control" id="prix_produit" name="prix_produit" value="<?= $details['prix_produit'] ?>" required>
                 </div>
 
                 <div class="mb-3">
@@ -119,12 +119,30 @@ if(isset($_SESSION["email"])){
 
                 <div class="mb-3">
                     <label for="image_produit" class="form-label">Image du produit</label>
-                    <input type="file" class="form-control" id="image_produit" name="image_produit" required placeholder="<?= $details['image_produit'] ?>">
+                    <input type="file" class="form-control" id="image_produit" name="image_produit" required value="<?= $details['image_produit'] ?>">
                 </div>
+
+                <div class="mb-3">
+                        Catégories :
+                        <select name="categories" class="form-control">
+
+                            <?php
+                            $sql = "SELECT * FROM categories";
+                            $categories = $dbh->query($sql);
+
+                            foreach ($categories as $categorie) {
+                                ?>
+                                <option class="text-success" value="<?= $categorie['id_categorie'] ?>"><?= $categorie['type_categorie'] ?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                </div>
+
 
                 <div class="d-flex justify-content-around">
                     <button type="submit" name="btn-connexion" class="btn btn-warning">Mettre a jour</button>
-                    <a href="produits.php" class="btn btn-success">Annuler</a>
+                    <a href="produits.php?page=1" class="btn btn-success">Annuler</a>
                 </div>
             </form>
 

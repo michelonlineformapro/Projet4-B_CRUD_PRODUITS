@@ -117,7 +117,7 @@ if(isset($_SESSION["email"])){
 
                                 <div class="container-fluid d-flex justify-content-center">
 
-                                    <a href="produits.php" class="mt-2 btn btn-success">RETOUR</a>
+                                    <a href="produits.php?page=1" class="mt-2 btn btn-success">RETOUR</a>
                                     <a href="#" class="mt-2 btn btn-warning">Panier</a>
                                 </div>
 

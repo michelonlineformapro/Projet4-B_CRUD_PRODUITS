@@ -95,7 +95,7 @@ if(isset($_SESSION["email"])){
 
             ?>
             <div class="text-center">
-                <img width="10%" src="assets/img/logo.png" alt="Annonces.com" title="Annonce.com">
+                <img width="10%" src="../assets/img/logo.png" alt="Annonces.com" title="Annonce.com">
             </div>
             <div class="d-flex flex-row justify-content-center mt-5">
                 <nav aria-label="Page navigation example">
