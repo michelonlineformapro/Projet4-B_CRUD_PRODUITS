@@ -118,6 +118,23 @@ if(isset($_SESSION["email"])){
                     </select>
                 </div>
 
+                <div class="mb-3">
+                    Vendeurs :
+                    <select name="vendeurs" class="form-control">
+
+                        <?php
+                        $sql = "SELECT * FROM vendeurs";
+                        $vendeurs = $dbh->query($sql);
+
+                        foreach ($vendeurs as $vendeur) {
+                            ?>
+                            <option class="text-success" value="<?= $vendeur['id_vendeur'] ?>"><?= $vendeur['nom_vendeur'] ?> <?= $vendeur['prenom_vendeur'] ?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                </div>
+
                 <div class="d-flex justify-content-around">
                     <button type="submit" name="btn-connexion" class="btn btn-warning">Ajouter</button>
                     <a href="produits.php?page=1" class="btn btn-success">Annuler</a>

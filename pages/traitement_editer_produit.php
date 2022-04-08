@@ -83,7 +83,7 @@ try {
 
 if($dbh){
     //Requète SQL de selection des produits
-    $sql = "UPDATE `produits` SET `nom_produit`= ?,`description_produit`= ?,`prix_produit`= ?,`stock_produit`= ?,`date_depot`= ?,`image_produit`= ?, `categories_id`= ? WHERE id_produit = ?";
+    $sql = "UPDATE `produits` SET `nom_produit`= ?,`description_produit`= ?,`prix_produit`= ?,`stock_produit`= ?,`date_depot`= ?,`image_produit`= ?, `categories_id`= ?, `vendeur_id`= ? WHERE id_produit = ?";
     //Requète préparée = connexion + methode prepare + requete sql
     //Les requètes préparée lutte contre les injections SQL
     //PDO::prepare — Prépare une requête à l'exécution et retourne un objet
@@ -99,6 +99,7 @@ if($dbh){
         $_POST['date_depot'],
         $_POST['image_produit'],
         $_POST['categories'],
+        $_POST['vendeur'],
         $_GET['id_produit']
     ));
 

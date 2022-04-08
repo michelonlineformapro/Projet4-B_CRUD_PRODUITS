@@ -14,6 +14,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="administrateurs.php">ADMINSITRATEURS</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="vendeurs.php">VENDEURS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="categories.php">CATEGORIES</a>
+                </li>
             </ul>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">

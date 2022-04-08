@@ -96,7 +96,9 @@ if(isset($_SESSION["email"])){
 
                 <div class="mb-3">
                     <label for="description_produit" class="form-label">Description</label>
-                    <textarea class="form-control" rows="5" id="description_produit" name="description_produit" value="<?= $details['description_produit'] ?>" required></textarea>
+                    <textarea class="form-control" rows="5" id="description_produit" name="description_produit" value="<?= $details['description_produit'] ?>" required>
+                        <?= $details['description_produit'] ?>
+                    </textarea>
                 </div>
 
                 <div class="mb-3">
@@ -137,6 +139,23 @@ if(isset($_SESSION["email"])){
                             }
                             ?>
                         </select>
+                </div>
+
+                <div class="mb-3">
+                    Vendeurs :
+                    <select name="vendeurs" class="form-control">
+
+                        <?php
+                        $sql = "SELECT * FROM vendeurs";
+                        $vendeurs = $dbh->query($sql);
+
+                        foreach ($vendeurs as $vendeur) {
+                            ?>
+                            <option class="text-success" value="<?= $vendeur['id_vendeur'] ?>"><?= $vendeur['nom_vendeur'] ?> <?= $vendeur['prenom_vendeur'] ?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>
                 </div>
 
 

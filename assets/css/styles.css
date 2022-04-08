@@ -69,3 +69,9 @@ html,body{
     background-color: white;
     padding: 20px;
 }
+
+/*Vendeur form*/
+#formulaire-vendeur{
+    display: none;
+    transition: 0.3s;
+}

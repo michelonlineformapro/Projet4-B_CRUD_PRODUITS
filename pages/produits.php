@@ -79,7 +79,7 @@ if(isset($_SESSION["email"])){
             $debut = ($page - 1) * $limite;
 
             //Requète SQL de selection des produits avec une limte et un point de depart = OFFSET
-            $sql = "SELECT * FROM produits INNER JOIN categories ON produits.categories_id = categories.id_categorie LIMIT $limite OFFSET $debut";
+            $sql = "SELECT * FROM produits INNER JOIN categories ON produits.categories_id = categories.id_categorie INNER JOIN vendeurs ON produits.vendeur_id = vendeurs.id_vendeur LIMIT $limite OFFSET $debut";
             //Grace a PDO on accède à la methode query()
             //PDO::query() prépare et exécute une requête SQL en un seul appel de fonction, retournant la requête en tant qu'objet PDOStatement. (etat des sonnées)
             //PDOStatement = Représente une requête préparée et, une fois exécutée, le jeu de résultats associé.
@@ -163,6 +163,15 @@ if(isset($_SESSION["email"])){
 
                                 <em class="card-text">Date de depot : <?= $date_depot->format('d-m-Y') ?></em>
                                 <p class="mt-3 text-danger">Catégorie : <?= $produit['type_categorie'] ?></p>
+                                <p class="text-info">Vendeur :</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="<?= $produit['avatar_vendeur'] ?>" alt="" title="" width="20%">
+                                    <?= $produit['prenom_vendeur'] ?>
+                                    <?= $produit['nom_vendeur'] ?>
+                                </div>
+                                <p class="mt-3 text-info">Email : </p>
+                                <p class="text-warning"><?= $produit['email_vendeur'] ?></p>
+                                
                                 <br />
                                 <div class="container-fluid d-flex justify-content-center">
 
@@ -182,6 +191,8 @@ if(isset($_SESSION["email"])){
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
     </body>
     </html>
 
@@ -202,7 +213,7 @@ if(isset($_SESSION["email"])){
     }
 
 }else{
-    echo "<a href='' class='btn btn-warning'>S'inscrire</a>";
+
     header('Location: ../index.php');
 }
 
