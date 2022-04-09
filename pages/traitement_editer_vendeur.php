@@ -83,41 +83,32 @@ try {
 
 if($dbh){
     //Requète SQL de selection des produits
-    $sql = "INSERT INTO `vendeurs`(`id_vendeur`, `nom_vendeur`, `prenom_vendeur`, `email_vendeur`, `avatar_vendeur`) VALUES (?,?,?,?,?)";
+    $sql = "UPDATE `vendeurs` SET `nom_vendeur`= ?,`prenom_vendeur`= ?,`email_vendeur`= ?,`avatar_vendeur`= ? WHERE id_vendeur = ?";
     //Requète préparée = connexion + methode prepare + requete sql
     //Les requètes préparée lutte contre les injections SQL
     //PDO::prepare — Prépare une requête à l'exécution et retourne un objet
-    $insert = $dbh->prepare($sql);
-    //Bindé les paramètre
-    //Liés les paramètre du formulaire a la table phpmyadmin
-    //PDOStatement::bindParam — Lie un paramètre à un nom de variable spécifique
-    $insert->bindParam(1, $_POST['id_vendeur']);
-    $insert->bindParam(2, $_POST['nom_vendeur']);
-    $insert->bindParam(3, $_POST['prenom_vendeur']);
-    $insert->bindParam(4, $_POST['email_vendeur']);
-    $insert->bindParam(5, $_POST['avatar_vendeur']);
-
-
+    $update = $dbh->prepare($sql);
     //executer la requète préparée
     //PDOStatement::execute — Exécute une requête préparée
     //Elle execute la reqète passé dans un tableau de valeur
-    $insert->execute(array(
-        $_POST['id_vendeur'],
+    $update->execute(array(
         $_POST['nom_vendeur'],
         $_POST['prenom_vendeur'],
         $_POST['email_vendeur'],
         $_POST['avatar_vendeur'],
+        $_GET['id_vendeur']
     ));
 
-    if($insert){
-        echo "<p class='container alert alert-success'>Votre vendeur a été ajouté avec succès !</p>";
-        echo "<div class='text-center'><a href='vendeurs.php' class='container btn btn-success'>Voir les vendeurs</a></div>";
+    if($update){
+        echo "<p class='container alert alert-success'>Votre vendeur a été mis a jour avec succès !</p>";
+        echo "<div class='text-center'><a href='vendeurs.php' class='container btn btn-success'>Voir les vendeur</a></div> ";
     }else{
-        echo "<p class='alert alert-danger'>Erreur lors de l'ajout du vendeur</p>";
+        echo "<p class='alert alert-danger'>Erreur lors de la mise a jour du vendeur</p>";
     }
 }
 }else{
-   header("Location: ../index.php");
+    header("Location: ../index.php");
 }
 ?>
+
 

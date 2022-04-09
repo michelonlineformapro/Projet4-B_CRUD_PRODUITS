@@ -20,30 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0de2b5e8-fa85-4baa-b074-54ec8215570a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/img/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/spy_icon-icons.com_55034.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infos.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/categories.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/traitement_ajouter_vendeur.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/vendeurs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/editer_vendeur.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/supprimer_vendeur.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/traitement_editer_vendeur.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ajouter_produit.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ajouter_produit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/editer_produit.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/editer_produit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/produits.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/produits.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/traitement_ajouter_produit.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/traitement_ajouter_produit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/traitement_editer_produit.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/traitement_editer_produit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sql/produits.sql" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sql/produits.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrateurs.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/administrateurs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/fouchette.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/traitement_ajouter_vendeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/traitement_ajouter_vendeur.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,12 +66,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -110,7 +101,8 @@
       <workItem from="1648576532996" duration="498000" />
       <workItem from="1648659658998" duration="2251000" />
       <workItem from="1648834544849" duration="486000" />
-      <workItem from="1649437592339" duration="5771000" />
+      <workItem from="1649437592339" duration="6439000" />
+      <workItem from="1649486008552" duration="5848000" />
     </task>
     <servers />
   </component>
@@ -135,15 +127,23 @@
     <option name="LAST_COMMIT_MESSAGE" value="Ajout de la jointure des categories" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="629" y="294" key="EditFileWatcherDialog" timestamp="1649486188623">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="629" y="294" key="EditFileWatcherDialog/0.0.1920.1032/-1920.-5.1920.1032@0.0.1920.1032" timestamp="1649486188623" />
     <state x="633" y="188" key="FileChooserDialogImpl" timestamp="1648835035594">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="633" y="188" key="FileChooserDialogImpl/0.0.1920.1032/-1920.-5.1920.1032@0.0.1920.1032" timestamp="1648835035594" />
     <state x="740" y="258" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1647632172941" />
-    <state x="794" y="439" key="NewPhpFileDialog" timestamp="1649443606705">
+    <state x="794" y="439" key="NewPhpFileDialog" timestamp="1649493687037">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1032/-1920.-5.1920.1032@0.0.1920.1032" timestamp="1649443606705" />
+    <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1032/-1920.-5.1920.1032@0.0.1920.1032" timestamp="1649493687037" />
+    <state x="461" y="161" key="SettingsEditor" timestamp="1649486189936">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="461" y="161" key="SettingsEditor/0.0.1920.1032/-1920.-5.1920.1032@0.0.1920.1032" timestamp="1649486189936" />
     <state x="616" y="238" key="run.anything.popup" timestamp="1647496656521">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

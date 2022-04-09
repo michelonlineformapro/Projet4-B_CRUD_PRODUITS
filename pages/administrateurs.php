@@ -62,14 +62,14 @@ $utilisateurs = $db->query($sql);
                 ?>
                 <tr>
                     <!--ici alis['intitulé de la colonne phpMyAdmin table utilisateurs']-->
-                    <th scope="row"><?= $utilisateur['id_users'] ?></th>
+                    <th scope="row"><?= $utilisateur['id_utilisateur'] ?></th>
                     <td><?= $utilisateur['email'] ?></td>
                     <td><?= $utilisateur['password'] ?></td>
                     <td>
                         <a href="" class="btn btn-success">EDITER</a>
                     </td>
                     <td>
-                        <a href="suppimer_utilisateur.php?id_utilisateur=<?= $utilisateur['id_users'] ?>" class="btn btn-danger">SUPPRIMER</a>
+                        <a href="suppimer_utilisateur.php?id_utilisateur=<?= $utilisateur['id_utilisateur'] ?>" class="btn btn-danger">SUPPRIMER</a>
                     </td>
                 </tr>
         <?php

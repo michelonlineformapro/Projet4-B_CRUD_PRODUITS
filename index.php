@@ -23,8 +23,11 @@
 
 <div class="container-fluid">
     <form id="form-login" method="post">
-        <div class="text-center">
+        <div class="text-center" id="img-form-login">
             <img src="assets/img/logo.png" alt="logo micashop" title="MicaShop.com">
+        </div>
+        <div class="text-center">
+            <h3 class="mt-3 text-info">CONNEXION</h3>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
