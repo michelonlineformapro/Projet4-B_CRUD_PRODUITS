@@ -77,6 +77,8 @@ if(isset($_SESSION["email"])){
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Catégorie</th>
+                <th scope="col">Nom du produit</th>
+                <th scope="col">Image du produit</th>
                 <th scope="col">Editer</th>
 
             </tr>
@@ -84,14 +86,20 @@ if(isset($_SESSION["email"])){
             <tbody>
 
             <?php
-            $sql = "SELECT * FROM categories";
+            $sql = "SELECT * FROM categories LEFT JOIN produits ON categories.id_categorie = produits.categorie_id ORDER BY id_categorie ASC";
             $categories = $dbh->query($sql);
             foreach ($categories as $categorie){
                 ?>
-                <tr class="align-middle">
+                <tr class="align-middle fw-bold">
                     <th scope="row"><?= $categorie['id_categorie'] ?></th>
+                    <td class="text-danger">
+                        <?= $categorie['categorie'] ?>
+                    </td>
                     <td>
-                        <?= $categorie['type_categorie'] ?>
+                        <?= $categorie['nom_produit'] ?>
+                    </td>
+                    <td>
+                        <img src="<?= $categorie['image_produit'] ?>" alt="" title="" width="20%">
                     </td>
                     <td>
                         <a class="btn btn-outline-info" href="editer_categorie.php?id_categorie=<?= $categorie['id_categorie'] ?>">Editer</a>

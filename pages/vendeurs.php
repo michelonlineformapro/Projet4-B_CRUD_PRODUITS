@@ -96,6 +96,8 @@ if(isset($_SESSION["email"])){
                 <th scope="col">Nom</th>
                 <th scope="col">Prenom</th>
                 <th scope="col">Email</th>
+                <th scope="col">Produits</th>
+                <th scope="col">Image produit</th>
                 <th scope="col">Supprimer</th>
                 <th scope="col">Editer</th>
 
@@ -104,18 +106,25 @@ if(isset($_SESSION["email"])){
             <tbody>
 
             <?php
-            $sql = "SELECT * FROM vendeurs";
+            $sql = "SELECT * FROM vendeurs LEFT JOIN produits ON vendeurs.id_vendeur = produits.vendeur_id ORDER  BY id_vendeur ASC";
             $vendeurs = $dbh->query($sql);
             foreach ($vendeurs as $vendeur){
                 ?>
                 <tr class="align-middle">
                     <th scope="row"><?= $vendeur['id_vendeur'] ?></th>
                     <td>
-                        <img src="<?= $vendeur['avatar_vendeur'] ?>" alt="" title="" width="20%">
+                        <img src="<?= $vendeur['avatar_vendeur'] ?>" alt="" title="" width="25%">
                     </td>
                     <td><?= $vendeur['nom_vendeur'] ?></td>
                     <td><?= $vendeur['prenom_vendeur'] ?></td>
                     <td><?= $vendeur['email_vendeur'] ?></td>
+
+                    <td>
+                        <?= $vendeur['nom_produit']; ?>
+                    </td>
+                    <td>
+                        <img src="<?= $vendeur['image_produit'] ?>" alt="" title="" width="25%">
+                    </td>
                     <td>
                         <a class="btn btn-outline-danger" href="supprimer_vendeur.php?id_vendeur=<?= $vendeur['id_vendeur'] ?>">Supprimer</a>
                     </td>
